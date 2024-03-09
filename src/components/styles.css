@@ -1,0 +1,103 @@
+.input {
+    display: flex;
+    width: 90%;
+    position: relative;
+    align-items: center;
+}
+
+.inputBox {
+    width: 100%;
+    border-radius: 50px;
+    padding: 20px 30px;
+    font-size: 25px;
+    border: none;
+    transition: 0.2s;
+    box-shadow: inset 0 0 5px #000;
+}
+
+.inputBox:focus {
+    box-shadow: 0 0 10px 1000px rgba(0, 0, 0, 0.6);
+    outline: none;
+}
+
+.inputSubmit {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin: 12px;
+    border-radius: 50px;
+    right: 0;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    background: rgb(235, 122, 30);
+    transition: 0.2s all;
+    box-shadow: 0 0 10px #000;
+}
+
+.inputSubmit:hover {
+    background: orange;
+}
+
+.inputSubmit:active {
+    transform: scale(0.8);
+    box-shadow: 0 0 5px #000;
+}
+
+/* ================================================================ */
+
+.todos {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    flex-wrap: wrap;
+}
+
+.todoSingle {
+    display: flex;
+    width: 29.5%;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 15px;
+    align-items: center;
+    background-image: url("https://cdn.pixabay.com/photo/2015/12/29/14/51/mountains-1112911_1280.jpg");
+    color: #fff;
+}
+
+.todoSingle .text {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.todoSingle .text:focus {
+    outline: none;
+}
+
+.todoSingle .icon {
+    margin-left: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+@media (max-width:1200px) {
+    .todoSingle {
+        width: 40%;
+    }
+}
+
+@media (max-width:700px) {
+    .input {
+        width: 95%;
+    }
+
+    .todos {
+        width: 95%;
+    }
+
+    .todoSingle {
+        width: 100%;
+    }
+}

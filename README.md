@@ -1,46 +1,81 @@
-# Getting Started with Create React App
+# npx create-react-app appName --template typescript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+any is not recommended to use in typescript
+let listener: unknown;
+unknown can be used instead of using any
+================================================================
+let name: string;
+let age: number | string;
+now age can have number or string
+let isStudent: boolean;
+let hobbies: string[];
+let role: [number, string];
+================================================================
+let printName: (name: string) => void;
+returns undefined
 
-## Available Scripts
+let printName: (name: string) => never;
+returns nothing
+================================================================
+In TypeScript, aliases are used to create reusable names for types.
+There are two main ways to create aliases: using the type keyword and using the interface keyword.
+type UserID = string;
+type User = {
+id: UserID;
+name: string;
+age: number;
+};
 
-In the project directory, you can run:
+interface UserID extends String {}
+interface User {
+id: UserID;
+name: string;
+age: number;
+}
+================================================================
+type X = {
+a: string
+}
+type Y = {
+b: string
+}
+if we want to use X properties in Y
+type Y = X & {
+b: string
+}
+================================================================
+interface X {
+a: string
+}
+interface Y extends X {
+c: string
+}
+================================================================
+type X = {
+a: string
+}
+interface Y extends X {
+c: string
+}
+================================================================
+interface X {
+a: string
+}
+type Y = X & {
+c: string
+}
+================================================================
+type Person = {
+name: string;
+age?: number;
+};
 
-### `npm start`
+let person: Person = {
+name: 'Ram',
+};
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+let peopleList: Person[];
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+================================================================
+React.FC -> functional component
+React.Node -> supports all component
