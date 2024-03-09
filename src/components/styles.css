@@ -1,6 +1,6 @@
 .input {
     display: flex;
-    width: 90%;
+    width: 95%;
     position: relative;
     align-items: center;
 }
@@ -45,23 +45,58 @@
 }
 
 /* ================================================================ */
+.todoContainer {
+    display: flex;
+    width: 95%;
+    margin-top: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
 
 .todos {
     display: flex;
-    justify-content: space-evenly;
-    width: 90%;
-    flex-wrap: wrap;
+    width: 47.5%;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: rgb(30, 161, 30);
+}
+
+.dragActive {
+    background-color: green;
+}
+
+.completed {
+    background-color: rgb(190, 31, 31);
+}
+
+.dragComplete {
+    background-color: red;
+}
+
+.drag {
+    box-shadow: 0 0 20px #000;
+}
+
+.todos .heading {
+    font-size: 30px;
 }
 
 .todoSingle {
     display: flex;
-    width: 29.5%;
     border-radius: 5px;
     padding: 20px;
     margin-top: 15px;
     align-items: center;
     background-image: url("https://cdn.pixabay.com/photo/2015/12/29/14/51/mountains-1112911_1280.jpg");
     color: #fff;
+    transition: 0.2s;
+}
+
+.todoSingle:hover {
+    box-shadow: 0 0 5px #000;
+    transform: scale(1.04);
 }
 
 .todoSingle .text {
@@ -82,9 +117,9 @@
     cursor: pointer;
 }
 
-@media (max-width:1200px) {
-    .todoSingle {
-        width: 40%;
+@media (max-width:1100px) {
+    .todos {
+        width: 45%;
     }
 }
 
@@ -95,9 +130,11 @@
 
     .todos {
         width: 95%;
+        margin-bottom: 10px;
     }
 
-    .todoSingle {
-        width: 100%;
+    .todoContainer {
+        width: 95%;
+        flex-direction: column;
     }
 }
