@@ -44,24 +44,28 @@ const SingleTodo: React.FC<Props> = ({ todo, todos, setTodos }) => {
         <span className="text">{todo.todo}</span>
       )}
 
-      <div>
-        <span
-          className="icon"
-          onClick={() => {
-            if (!edit && !todo.isDone) {
-              setEdit(!edit);
-            }
-          }}
-        >
-          {todo.isDone ? <></> : <MdEdit />}
-        </span>
-        <span className="icon" onClick={() => handleDone(todo.id)}>
-          {todo.isDone ? <MdDoNotDisturb /> : <MdOutlineDoneAll />}
-        </span>
-        <span className="icon" onClick={() => handleDelete(todo.id)}>
-          <RiDeleteBin2Line />
-        </span>
-      </div>
+      {edit ? (
+        <></>
+      ) : (
+        <div>
+          <span
+            className="icon"
+            onClick={() => {
+              if (!edit && !todo.isDone) {
+                setEdit(!edit);
+              }
+            }}
+          >
+            {todo.isDone ? <></> : <MdEdit />}
+          </span>
+          <span className="icon" onClick={() => handleDone(todo.id)}>
+            {todo.isDone ? <MdDoNotDisturb /> : <MdOutlineDoneAll />}
+          </span>
+          <span className="icon" onClick={() => handleDelete(todo.id)}>
+            <RiDeleteBin2Line />
+          </span>
+        </div>
+      )}
     </form>
   );
 };
